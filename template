@@ -1,0 +1,7 @@
+#!/bin/bash
+
+template="Olá ${name},
+Sua senha de E-mail vai expirar em ${dateutc}.
+Por favor, entre em contato com o Suporte para efetuar a troca o quanto antes."
+
+echo "${template}"
