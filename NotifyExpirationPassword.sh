@@ -22,7 +22,7 @@ init() {
 
     for day in ${days[@]}; do
 
-        if [[ $(grep -B1 "${day}" <<<${users}) ]]; then
+        if [[ $(grep -B1 "${day}" <<<"${users}") ]]; then
             expiration[$position]="$(grep -B3 "${day}" <<<${users} | sed 's/uid: //g; s/givenName: //g; s/mail: //g; s/krbPasswordExpiration: //g' | paste -sd' ')"
             position=$((++position))
         fi
